@@ -6,103 +6,265 @@ export const Game = () => {
     <GameContainer>
       <GameBox>
         <BoxRow>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
         </BoxRow>
         <BoxRow>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
         </BoxRow>
         <BoxRow>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
         </BoxRow>
         <BoxRow>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
         </BoxRow>
         <BoxRow>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
         </BoxRow>
         <BoxRow>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
         </BoxRow>
         <BoxRow>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
         </BoxRow>
         <BoxRow>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
         </BoxRow>
         <BoxRow>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
-          <InnerBox></InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
+          <InnerBox>
+            <InnerBoxNumber>1</InnerBoxNumber>
+          </InnerBox>
         </BoxRow>
       </GameBox>
     </GameContainer>
@@ -141,7 +303,15 @@ const InnerBox = styled.div`
   border-right: none;
   border-bottom: 1px solid;
   border-top: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.5em;
+  font-weight: 100;
   &:nth-child(3n + 0) {
     border-right: solid;
   }
 `;
+const InnerBoxNumber = styled.span`
+margin:auto
+`
