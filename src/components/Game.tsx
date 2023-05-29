@@ -56,8 +56,8 @@ const BoxRow = styled.div`
     border-bottom: solid;
   }
 `;
-const InnerBox = styled.div`
-  width: calc((100% / 9) - 1px);
+const InnerBox = styled.button`
+  width: calc(100% / 9);
   height: calc(100%);
   border-left: 1px solid black;
   border-image: initial;
@@ -71,6 +71,9 @@ const InnerBox = styled.div`
   font-weight: 100;
   &:nth-child(3n + 0) {
     border-right: solid;
+  }
+  &:focus{
+    background-color: #7a8b9c;
   }
 `;
 const InnerBoxNumber = styled.span`
