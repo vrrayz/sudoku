@@ -6,20 +6,28 @@ interface GameBoxProperties {
   boxNumbers: number[][];
 }
 export const Game = ({ boxNumbers }: GameBoxProperties) => {
-    const remappedNumbers = useRemapNumbers(boxNumbers)
+  const remappedNumbers = useRemapNumbers(boxNumbers);
+  const numberInputs = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <GameContainer>
       <GameBox>
-        {remappedNumbers.map((numberRows,i) => (
+        {remappedNumbers.map((numberRows, i) => (
           <BoxRow key={i}>
             {numberRows.map((item, index) => (
               <InnerBox key={index}>
-                <InnerBoxNumber style={{display: item.display}}>{item.number}</InnerBoxNumber>
+                <InnerBoxNumber style={{ display: item.display }}>
+                  {item.number}
+                </InnerBoxNumber>
               </InnerBox>
             ))}
           </BoxRow>
         ))}
       </GameBox>
+      <NumberOptionsContainer>
+        {numberInputs.map((number, index) => (
+          <NumberInputButtons key={index}>{number}</NumberInputButtons>
+        ))}
+      </NumberOptionsContainer>
     </GameContainer>
   );
 };
@@ -28,7 +36,7 @@ const GameContainer = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   flex-direction: column;
 `;
 const GameBox = styled.div`
@@ -36,7 +44,7 @@ const GameBox = styled.div`
   width: 100%;
   height: 350px;
   max-width: 350px;
-  margin: auto;
+  margin: 16px auto;
 `;
 const BoxRow = styled.div`
   width: 100%;
@@ -67,4 +75,15 @@ const InnerBox = styled.div`
 `;
 const InnerBoxNumber = styled.span`
   margin: auto;
+`;
+const NumberOptionsContainer = styled(GameBox)`
+  height: 50px;
+  margin-top: 0px;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+`;
+const NumberInputButtons = styled.button`
+  width: 100%;
+  margin: 2px;
 `;
