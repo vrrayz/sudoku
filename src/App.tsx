@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useGenerateNumbers } from './hooks/useGenerateNumbers';
 
 function App() {
+  const grid = useGenerateNumbers();
+  console.log(grid);
   return (
     <div className="App">
       <header className="App-header">
