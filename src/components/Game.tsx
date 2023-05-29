@@ -1,18 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import { useRemapNumbers } from "../hooks/useRemapNumbers";
 
 interface GameBoxProperties {
   boxNumbers: number[][];
 }
 export const Game = ({ boxNumbers }: GameBoxProperties) => {
+    const remappedNumbers = useRemapNumbers(boxNumbers)
   return (
     <GameContainer>
       <GameBox>
-        {boxNumbers.map((numberRows,i) => (
+        {remappedNumbers.map((numberRows,i) => (
           <BoxRow key={i}>
-            {numberRows.map((number, index) => (
+            {numberRows.map((item, index) => (
               <InnerBox key={index}>
-                <InnerBoxNumber>{number}</InnerBoxNumber>
+                <InnerBoxNumber style={{display: item.display}}>{item.number}</InnerBoxNumber>
               </InnerBox>
             ))}
           </BoxRow>
