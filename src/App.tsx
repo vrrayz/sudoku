@@ -8,7 +8,7 @@ function App() {
   const grid = useGenerateNumbers();
   console.log(grid);
   return (
-    <Game />
+    <Game boxNumbers={grid} />
   );
 }
 
