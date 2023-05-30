@@ -9,6 +9,7 @@ interface RemappedNumbers {
   id: number;
   number: number;
   display: string;
+  inputClass: string;
 }
 interface CurrentBoxIndex {
   firstIndex: number;
@@ -32,18 +33,19 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
   const setNewRemap = useCallback((currentBoxIndex: CurrentBoxIndex, input: number) => {
     setInnerBoxNumbers(prev => prev.map((numbers, fi) => numbers.map((number, si) => {
       if(currentBoxIndex.firstIndex === fi && currentBoxIndex.secondIndex === si){
-        return {id: number.id, number: input, display: 'block' }
+        const currentInputClass = remappedNumbers[fi][si].number === input ? 'correct':'wrong'
+        return {id: number.id, number: input, display: 'block', inputClass: currentInputClass }
       }
-      return {id: number.id, number: number.number, display: number.display }
+      return {id: number.id, number: number.number, display: number.display, inputClass: number.inputClass }
     })))
-  },[])
+  },[remappedNumbers])
   return (
     <GameContainer>
       <GameBox>
         {innerBoxNumbers.map((numberRows, i) => (
           <BoxRow key={i}>
             {numberRows.map((item, index) => (
-              <InnerBox key={index} onClick={() => setCurrentBoxIndex({firstIndex: i,secondIndex: index})}>
+              <InnerBox key={index} onClick={() => setCurrentBoxIndex({firstIndex: i,secondIndex: index})} className={item.inputClass}>
                 <InnerBoxNumber style={{ display: item.display }}>
                   {item.number}
                 </InnerBoxNumber>
@@ -103,6 +105,15 @@ const InnerBox = styled.button`
   }
   &:focus{
     background-color: #7a8b9c;
+  }
+  &.wrong{
+    color: red;
+  }
+  &.correct{
+    color: blue;
+  }
+  &.correct, &.wrong{
+    font-weight:500;
   }
 `;
 const InnerBoxNumber = styled.span`
