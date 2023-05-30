@@ -1,20 +1,49 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 import { useRemapNumbers } from "../hooks/useRemapNumbers";
 
 interface GameBoxProperties {
   boxNumbers: number[][];
 }
+interface RemappedNumbers {
+  id: number;
+  number: number;
+  display: string;
+}
+interface CurrentBoxIndex {
+  firstIndex: number;
+  secondIndex: number;
+}
 export const Game = ({ boxNumbers }: GameBoxProperties) => {
   const remappedNumbers = useRemapNumbers(boxNumbers);
+  const [innerBoxNumbers, setInnerBoxNumbers] = useState<RemappedNumbers[][]>(remappedNumbers)
+  const [currentBoxIndex, setCurrentBoxIndex] = useState<CurrentBoxIndex>()
   const numberInputs = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  const inputNumber = (input: number) => {
+    console.log(currentBoxIndex, "The current box index")
+    console.log(remappedNumbers)
+    if(currentBoxIndex){
+      console.log(remappedNumbers[currentBoxIndex?.firstIndex][currentBoxIndex?.secondIndex].number, "The hidden value of current box index")
+      console.log(input, "The value clicked")
+      setNewRemap(currentBoxIndex,input)
+    }
+  }
+  const setNewRemap = useCallback((currentBoxIndex: CurrentBoxIndex, input: number) => {
+    setInnerBoxNumbers(prev => prev.map((numbers, fi) => numbers.map((number, si) => {
+      if(currentBoxIndex.firstIndex === fi && currentBoxIndex.secondIndex === si){
+        return {id: number.id, number: input, display: 'block' }
+      }
+      return {id: number.id, number: number.number, display: number.display }
+    })))
+  },[])
   return (
     <GameContainer>
       <GameBox>
-        {remappedNumbers.map((numberRows, i) => (
+        {innerBoxNumbers.map((numberRows, i) => (
           <BoxRow key={i}>
             {numberRows.map((item, index) => (
-              <InnerBox key={index}>
+              <InnerBox key={index} onClick={() => setCurrentBoxIndex({firstIndex: i,secondIndex: index})}>
                 <InnerBoxNumber style={{ display: item.display }}>
                   {item.number}
                 </InnerBoxNumber>
@@ -25,7 +54,7 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
       </GameBox>
       <NumberOptionsContainer>
         {numberInputs.map((number, index) => (
-          <NumberInputButtons key={index}>{number}</NumberInputButtons>
+          <NumberInputButtons key={index} onClick={() => inputNumber(number)}>{number}</NumberInputButtons>
         ))}
       </NumberOptionsContainer>
     </GameContainer>
