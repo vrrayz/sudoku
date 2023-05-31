@@ -22,8 +22,6 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
   const numberInputs = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   const inputNumber = (input: number) => {
-    console.log(currentBoxIndex, "The current box index")
-    console.log(remappedNumbers)
     if(currentBoxIndex){
       console.log(remappedNumbers[currentBoxIndex?.firstIndex][currentBoxIndex?.secondIndex].number, "The hidden value of current box index")
       console.log(input, "The value clicked")
@@ -31,21 +29,29 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
     }
   }
   const setNewRemap = useCallback((currentBoxIndex: CurrentBoxIndex, input: number) => {
-    setInnerBoxNumbers(prev => prev.map((numbers, fi) => numbers.map((number, si) => {
-      if(currentBoxIndex.firstIndex === fi && currentBoxIndex.secondIndex === si){
+    setInnerBoxNumbers(prev => prev.map((numbers, fi) => numbers.map((boxNumber, si) => {
+      // fi is first index
+      // si is second index
+      if(currentBoxIndex.firstIndex === fi && currentBoxIndex.secondIndex === si && (boxNumber.inputClass === 'wrong' || boxNumber.display === 'none')){
         const currentInputClass = remappedNumbers[fi][si].number === input ? 'correct':'wrong'
-        return {id: number.id, number: input, display: 'block', inputClass: currentInputClass }
+        return {id: boxNumber.id, number: input, display: 'block', inputClass: currentInputClass }
       }
-      return {id: number.id, number: number.number, display: number.display, inputClass: number.inputClass }
+      return {id: boxNumber.id, number: boxNumber.number, display: boxNumber.display, inputClass: boxNumber.inputClass }
     })))
   },[remappedNumbers])
+
+  const checkAndSetBoxIndex = ({firstIndex, secondIndex}: CurrentBoxIndex) => {
+    if(innerBoxNumbers[firstIndex][secondIndex].inputClass === 'wrong' || innerBoxNumbers[firstIndex][secondIndex].display === 'none'){
+      setCurrentBoxIndex({firstIndex,secondIndex})
+    }
+  }
   return (
     <GameContainer>
       <GameBox>
         {innerBoxNumbers.map((numberRows, i) => (
           <BoxRow key={i}>
             {numberRows.map((item, index) => (
-              <InnerBox key={index} onClick={() => setCurrentBoxIndex({firstIndex: i,secondIndex: index})} className={item.inputClass}>
+              <InnerBox key={index} onClick={() => checkAndSetBoxIndex({firstIndex: i,secondIndex: index})} className={item.inputClass}>
                 <InnerBoxNumber style={{ display: item.display }}>
                   {item.number}
                 </InnerBoxNumber>
