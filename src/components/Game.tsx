@@ -110,13 +110,15 @@ const InnerBox = styled.button`
     border-right: solid;
   }
   &:focus{
-    background-color: #7a8b9c;
+    background: radial-gradient(#fff, #aaa);
   }
   &.wrong{
     color: red;
+    background: radial-gradient(#F0F8FF, #fd5c63);
   }
   &.correct{
     color: blue;
+    background: radial-gradient(#F0F8FF, #7CB9E8);
   }
   &.correct, &.wrong{
     font-weight:500;
