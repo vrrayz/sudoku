@@ -18,6 +18,7 @@ export const NumberOptions = ({numberInputs,inputNumber}: NumberOptionsPropertie
 const NumberOptionsContainer = styled.div`
   height: 50px;
   margin-top: 0px;
+  margin: 0px 8px;
   display: flex;
   justify-content: space-between;
   border: none;
