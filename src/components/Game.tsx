@@ -4,6 +4,7 @@ import { useRemapNumbers } from "../hooks/useRemapNumbers";
 import { CurrentBoxIndex, RemappedNumbers } from "./types";
 import { BoxRows } from "./BoxRows";
 import { NumberOptions } from "./NumberOptions";
+import { MetricSection } from "./MetricSection";
 
 interface GameBoxProperties {
   boxNumbers: number[][];
@@ -46,6 +47,7 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
           <BoxRows key={i} numberRows={numberRows} firstIndex={i} checkAndSetBoxIndex={checkAndSetBoxIndex}  />
         ))}
       </GameBox>
+      <MetricSection></MetricSection>
       <NumberOptions numberInputs={numberInputs} inputNumber={inputNumber} />
     </GameContainer>
   );
