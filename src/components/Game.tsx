@@ -114,11 +114,11 @@ const InnerBox = styled.button`
   }
   &.wrong{
     color: red;
-    background: radial-gradient(#F0F8FF, #fd5c63);
+    // background: radial-gradient(#F0F8FF, #fd5c63);
   }
   &.correct{
     color: blue;
-    background: radial-gradient(#F0F8FF, #7CB9E8);
+    background: radial-gradient(rgb(152 213 255),rgb(240, 248, 255));
   }
   &.correct, &.wrong{
     font-weight:500;
