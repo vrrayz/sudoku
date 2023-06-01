@@ -9,7 +9,7 @@ export interface CurrentBoxIndex {
     firstIndex: number;
     secondIndex: number;
   }
-  interface PlayerMetric {
+export interface PlayerMetric {
     score: number;
     mistakes: number;
   }

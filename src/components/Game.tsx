@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 import { useRemapNumbers } from "../hooks/useRemapNumbers";
-import { CurrentBoxIndex, RemappedNumbers } from "./types";
+import { CurrentBoxIndex, PlayerMetric, RemappedNumbers } from "./types";
 import { BoxRows } from "./BoxRows";
 import { NumberOptions } from "./NumberOptions";
 import { MetricSection } from "./MetricSection";
@@ -14,7 +14,10 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
   const remappedNumbers = useRemapNumbers(boxNumbers);
   const [innerBoxNumbers, setInnerBoxNumbers] = useState<RemappedNumbers[][]>(remappedNumbers)
   const [currentBoxIndex, setCurrentBoxIndex] = useState<CurrentBoxIndex>()
+  const [playerMetric, setPlayerMetric] = useState<PlayerMetric>({score: 0, mistakes: 0})
   const numberInputs = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  console.log("Current player metric",playerMetric);
 
   const inputNumber = (input: number) => {
     if(currentBoxIndex){
@@ -28,6 +31,11 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
       // si is second index
       if(currentBoxIndex.firstIndex === fi && currentBoxIndex.secondIndex === si && (boxNumber.inputClass === 'wrong' || boxNumber.display === 'none')){
         const currentInputClass = remappedNumbers[fi][si].number === input ? 'correct':'wrong'
+
+        // The player gets +1 point(s) for each score that is correct and -1 points for each score that's wrong
+        setPlayerMetric(prev => {
+          return currentInputClass === 'correct' ?  {score: prev.score+1, mistakes: prev.mistakes} : {score: prev.score-1, mistakes: prev.mistakes + 1}
+        })
         return {id: boxNumber.id, number: input, display: 'block', inputClass: currentInputClass }
       }
       return {id: boxNumber.id, number: boxNumber.number, display: boxNumber.display, inputClass: boxNumber.inputClass }
@@ -47,7 +55,7 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
           <BoxRows key={i} numberRows={numberRows} firstIndex={i} checkAndSetBoxIndex={checkAndSetBoxIndex}  />
         ))}
       </GameBox>
-      <MetricSection></MetricSection>
+      <MetricSection playerMetric={playerMetric} />
       <NumberOptions numberInputs={numberInputs} inputNumber={inputNumber} />
     </GameContainer>
   );
