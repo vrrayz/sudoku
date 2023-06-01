@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useRemapNumbers } from "../hooks/useRemapNumbers";
 import { CurrentBoxIndex, RemappedNumbers } from "./types";
 import { BoxRows } from "./BoxRows";
+import { NumberOptions } from "./NumberOptions";
 
 interface GameBoxProperties {
   boxNumbers: number[][];
@@ -16,7 +17,6 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
 
   const inputNumber = (input: number) => {
     if(currentBoxIndex){
-      console.log(remappedNumbers[currentBoxIndex?.firstIndex][currentBoxIndex?.secondIndex].number, "The hidden value of current box index")
       console.log(input, "The value clicked")
       setNewRemap(currentBoxIndex,input)
     }
@@ -35,6 +35,7 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
 
   const checkAndSetBoxIndex = ({firstIndex, secondIndex}: CurrentBoxIndex) => {
     if(innerBoxNumbers[firstIndex][secondIndex].inputClass === 'wrong' || innerBoxNumbers[firstIndex][secondIndex].display === 'none'){
+      console.log(remappedNumbers[firstIndex][secondIndex].number, "The hidden value of current box index")
       setCurrentBoxIndex({firstIndex,secondIndex})
     }
   }
@@ -45,14 +46,17 @@ export const Game = ({ boxNumbers }: GameBoxProperties) => {
           <BoxRows key={i} numberRows={numberRows} firstIndex={i} checkAndSetBoxIndex={checkAndSetBoxIndex}  />
         ))}
       </GameBox>
-      <NumberOptionsContainer>
-        {numberInputs.map((number, index) => (
-          <NumberInputButtons key={index} onClick={() => inputNumber(number)}>{number}</NumberInputButtons>
-        ))}
-      </NumberOptionsContainer>
+      <NumberOptions numberInputs={numberInputs} inputNumber={inputNumber} />
     </GameContainer>
   );
 };
+export const GameBox = styled.div`
+  border: 1px solid black;
+  width: 100%;
+  height: 350px;
+  max-width: 350px;
+  margin: 16px auto;
+`;
 const GameContainer = styled.section`
   background-color: #fafafa;
   width: 100vw;
@@ -60,22 +64,4 @@ const GameContainer = styled.section`
   display: flex;
   justify-content: start;
   flex-direction: column;
-`;
-const GameBox = styled.div`
-  border: 1px solid black;
-  width: 100%;
-  height: 350px;
-  max-width: 350px;
-  margin: 16px auto;
-`;
-const NumberOptionsContainer = styled(GameBox)`
-  height: 50px;
-  margin-top: 0px;
-  display: flex;
-  justify-content: space-between;
-  border: none;
-`;
-const NumberInputButtons = styled.button`
-  width: 100%;
-  margin: 2px;
 `;
